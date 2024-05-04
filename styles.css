@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #808080;
+    color: black;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 100px; 
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.login-container {
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    background-color: #333; /* Slightly lighter than the background for visibility */
+    color: white;
+    border: 1px solid white;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: grey;
+    color: white;
+
+}
+.menu-button span {
+    display: block;
+    background-color: white;
+    height: 3px;
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    transition: all 0.3s ease;
+}
+.menu-button span:nth-child(1) {
+    top: 25%;
+}
+
+.menu-button span:nth-child(2) {
+    top: 50%;
+}
+
+.menu-button span:nth-child(3) {
+    top: 75%;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
