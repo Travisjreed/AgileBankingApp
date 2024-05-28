@@ -25,10 +25,12 @@ header {
     width: 40px;
     position: relative;
 }
+
 .bank-name {
-    color: #D4AF37; 
-    margin: 0 10px; 
+    color: #D4AF37;
+    margin: 0 10px;
 }
+
 .login-container {
     width: 300px;
     margin: 50px auto;
@@ -44,7 +46,7 @@ input[type="password"] {
     width: 100%;
     padding: 8px;
     margin-top: 4px;
-    background-color: #333; 
+    background-color: #333;
     color: white;
     border: 1px solid white;
 }
@@ -58,11 +60,11 @@ button {
     width: 100%;
 }
 
-button:hover {
-    background-color: grey;
-    color: white;
+    button:hover {
+        background-color: grey;
+        color: white;
+    }
 
-}
 .menu-button span {
     display: block;
     background-color: #D4AF37;
@@ -72,22 +74,24 @@ button:hover {
     left: 15%;
     transition: all 0.3s ease;
 }
-.menu-button span:nth-child(1) {
-    top: 25%;
-}
 
-.menu-button span:nth-child(2) {
-    top: 50%;
-}
+    .menu-button span:nth-child(1) {
+        top: 25%;
+    }
 
-.menu-button span:nth-child(3) {
-    top: 75%;
-}
+    .menu-button span:nth-child(2) {
+        top: 50%;
+    }
+
+    .menu-button span:nth-child(3) {
+        top: 75%;
+    }
 
 .logo {
     width: 120px;
     height: auto;
 }
+
 .menu-container {
     display: flex;
     justify-content: flex-end;
@@ -100,16 +104,15 @@ button:hover {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    right: 0; 
+    right: 0;
 }
 
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
 
 .menu-container:hover .dropdown-content {
     display: block;
@@ -129,35 +132,75 @@ button:hover {
     position: relative;
     display: inline-block;
 }
+
 .header-title {
     position: absolute;
     left: 0;
     right: 0;
     text-align: center;
-    color:  #D4AF37; 
+    color: #D4AF37;
     margin: 0 auto;
 }
+
 .registration-container {
     width: 300px;
     padding: 20px;
     background-color: #333;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     border-radius: 8px;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .header-title-link {
     text-decoration: none;
     color: #D4AF37;
 }
+
 .menu-container {
     position: relative;
 }
+
 .center-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
-  width: 100%
+    height: 100vh;
+    width: 100%;
 }
+
+.button-container {
+    text-align: center;
+}
+
+.display-bar {
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #333;
+    color: #D4AF37;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.btn {
+    background-color: #D4AF37; /* Match the existing gold color */
+    border: none; /* Remove borders */
+    color: black; /* Black text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Get the elements to sit side by side */
+    font-size: 16px; /* Increase font size */
+    margin: 10px 5px; /* Add some margin */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+    .btn:hover {
+        background-color: #B8860B; /* Darker gold on hover */
+    }
