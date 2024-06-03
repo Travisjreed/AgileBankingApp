@@ -3,17 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Banking Site</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <a href="index.html">
-            <img src="Images/Logo.jpg" alt="Bank of Agile Logo" class="logo">
-        </a>
-        <a href="index.html" class="header-title-link">
-            <h1 class="header-title">BANK OF AGILE</h1>
-        </a>
         <div class="menu-container">
             <button class="menu-button">
                 <span></span>
@@ -23,13 +17,12 @@
             <div class="dropdown-content">
                 <a href="index.html">Home</a>
                 <a href="registration.html">Registration</a>
-                <a href="user.html">Banking Services</a> 
             </div>
         </div>
     </header>
     <div class="login-container">
         <h1>Welcome to Our Bank</h1>
-        <form action="/submit-your-login-form" method="POST">
+        <form id="loginForm" method="POST">
             <div class="input-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username">
@@ -40,7 +33,29 @@
             </div>
             <button type="submit">Login</button>
         </form>
-        <button class="btn" onclick="window.location.href='registration.html'">Sign Up</button>
     </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('/api/users/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                window.location.href = data.redirectUrl;
+            } else {
+                alert('Login failed');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -29,41 +29,33 @@
     <div class="center-container">
         <div class="registration-container">
             <h1>Register</h1>
-            <form action="/submit-registration" id="form" method="POST">
+            <form id="registrationForm" method="POST">
                 <input type="text" id="username" placeholder="username" /><br>
-                <input type="text" id="password" placeholder="password" /><br>
+                <input type="password" id="password" placeholder="password" /><br>
                 <input type="submit" value="Register" />
             </form>
         </div>
     </div>
     <script>
-        var form = document.getElementById('form')
+        document.getElementById('registrationForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
 
-        form.addEventListener('submit', function (e) {
-            e.preventDefault()
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
 
-            var usernameInput = document.getElementById('username').value
-            var passwordInput = document.getElementById('password').value
-
-            fetch('http://localhost:5103/users/register', { // Ensure this matches your backend URL and port
+            const response = await fetch('/api/users/register', {
                 method: 'POST',
-                body: JSON.stringify({
-                    username: usernameInput,
-                    password: passwordInput,
-                }),
                 headers: {
-                    'Content-type': 'application/json',
-                }
-            })
-                .then(function (response) {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(function (data) {
-                    console.log(data)
-                }).catch(error => console.error('Error', error));
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            if (response.ok) {
+                window.location.href = 'index.html';
+            } else {
+                alert('Registration failed');
+            }
         });
     </script>
 </body>

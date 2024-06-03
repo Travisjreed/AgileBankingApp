@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function displayInfo(info) {
+            document.getElementById('display-bar').innerText = info;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="Images/Logo.jpg" alt="Bank of Agile Logo" class="logo">
+        </a>
+        <a href="index.html" class="header-title-link">
+            <h1 class="header-title">BANK OF AGILE</h1>
+        </a>
+        <div class="menu-container">
+            <button class="menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="registration.html">Registration</a>
+                <a href="user.html">Banking Services</a>
+            </div>
+        </div>
+    </header>
+    <div class="center-container">
+        <div id="display-bar" class="display-bar">Click a button to see information</div>
+        <div class="button-container">
+            <button class="btn" onclick="displayInfo('Check Balance')">Check Balance</button>
+            <button class="btn" onclick="displayInfo('Transfer Funds')">Transfer Funds</button>
+            <button class="btn" onclick="displayInfo('View Statements')">View Statements</button>
+            <button class="btn" onclick="displayInfo('Deposit Funds')">Deposit Funds</button>
+            <button class="btn" onclick="displayInfo('Withdraw Funds')">Withdraw Funds</button>
+            <button class="btn" onclick="displayInfo('Contact Support')">Contact Support</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\travi\\OneDrive\\Desktop\\AgileBankingApp_Group4-main\\SimpleBankingApp\\wwwroot\\Images\\Logo.jpg",
+      "PackagePath": "staticwebassets\\Images\\Logo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\travi\\OneDrive\\Desktop\\AgileBankingApp_Group4-main\\SimpleBankingApp\\wwwroot\\Index.html",
+      "PackagePath": "staticwebassets\\Index.html"
+    },
+    {
+      "Id": "C:\\Users\\travi\\OneDrive\\Desktop\\AgileBankingApp_Group4-main\\SimpleBankingApp\\wwwroot\\registration.html",
+      "PackagePath": "staticwebassets\\registration.html"
+    },
+    {
+      "Id": "C:\\Users\\travi\\OneDrive\\Desktop\\AgileBankingApp_Group4-main\\SimpleBankingApp\\wwwroot\\styles.css",
+      "PackagePath": "staticwebassets\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\travi\\OneDrive\\Desktop\\AgileBankingApp_Group4-main\\SimpleBankingApp\\wwwroot\\user.html",
+      "PackagePath": "staticwebassets\\user.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.SimpleBankingApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.SimpleBankingApp.props",
+      "PackagePath": "build\\SimpleBankingApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.SimpleBankingApp.props",
+      "PackagePath": "buildMultiTargeting\\SimpleBankingApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.SimpleBankingApp.props",
+      "PackagePath": "buildTransitive\\SimpleBankingApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
