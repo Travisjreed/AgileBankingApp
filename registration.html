@@ -5,61 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
-<header>
-    <a href="index.html">
-        <img src="Images/Logo.jpg" alt="Bank of Agile Logo" class="logo">
-    </a>
-    <a href="index.html" class="header-title-link">
-        <h1 class="header-title">BANK OF AGILE</h1>
-    </a>
-    <div class="menu-container">
-        <button class="menu-button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="dropdown-content">
-            <a href="index.html">Home</a>
-            <a href="registration.html">Registration</a>
-        </div>
-    </div>
-</header>
 <body>
+    <header>
+        <a href="index.html">
+            <img src="Images/Logo.jpg" alt="Bank of Agile Logo" class="logo">
+        </a>
+        <a href="index.html" class="header-title-link">
+            <h1 class="header-title">BANK OF AGILE</h1>
+        </a>
+        <nav class="menu-container">
+            <button class="menu-button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="registration.html">Registration</a>
+                <a href="user.html">Banking Services</a>
+                <a href="ourstory.html">Our Story</a>
+                <a href="customersupport.html">Customer Support</a>
+            </div>
+        </nav>
+    </header>
     <div class="center-container">
-        <div class="registration-container">
-        <h1>Register</h1>
-        <form action="/submit-registration" method="POST">
-            <div class="input-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="input-group">
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" required>
-            </div>
-            <div class="input-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="input-group">
-                <label for="ssn">Social Security Number:</label>
-                <input type="text" id="ssn" name="ssn" required>
-            </div>
-            <div class="input-group">
-                <label for="income">Yearly Income:</label>
-                <input type="number" id="income" name="income" required>
-            </div>
-            <div class="input-group">
-                <label for="assets">Assets:</label>
-                <input type="text" id="assets" name="assets" required>
-            </div>
-            <button type="submit">Save and Login</button>
-        </form>
+        <div class="content-container">
+            <h1>Register</h1>
+            <form action="/submit-registration" id="form" method="POST">
+                <div class="input-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="input-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Address" required>
+                </div>
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
