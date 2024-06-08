@@ -70,5 +70,44 @@
             </form>
         </div>
     </div>
+    <script>
+        var form = document.getElementById('form');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var address = document.getElementById('address').value;
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            fetch('http://localhost:8080/users', {
+                method: 'POST',
+                body: JSON.stringify({
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phone: phone,
+                    address: address,
+                    username: username,
+                    password: password,
+                }),
+                headers: {
+                    'Content-type': 'application/json',
+                }
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    console.log(data);
+                    document.getElementById('form').reset();
+                })
+                .catch(error => console.error('Error', error));
+        });
+    </script>
 </body>
 </html>
