@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="Images/Logo.jpg" alt="Bank of Agile Logo" class="logo">
+        </a>
+        <a href="index.html" class="header-title-link">
+            <h1 class="header-title">BANK OF AGILE</h1>
+        </a>
+        <nav class="menu-container">
+            <button class="menu-button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="registration.html">Registration</a>
+                <a href="user.html">Banking Services</a>
+                <a href="ourstory.html">Our Story</a>
+                <a href="customersupport.html">Customer Support</a>
+            </div>
+        </nav>
+    </header>
+    <div class="center-container">
+        <h1>Our Banking Services</h1>
+        <div class="balance-display" id="balance-display">Your Balance: $1,000,000</div>
+        <div class="services-container">
+            <div class="service-card" onclick="displayBalance()">
+                <i class="fas fa-university fa-3x"></i>
+                <h2>Check Balance</h2>
+                <p>View your account balance in real-time with just one click.</p>
+            </div>
+            <div class="service-card" onclick="showPopup('deposit')">
+                <i class="fas fa-piggy-bank fa-3x"></i>
+                <h2>Deposit Funds</h2>
+                <p>Deposit funds into your account quickly and securely.</p>
+            </div>
+            <div class="service-card" onclick="showPopup('withdraw')">
+                <i class="fas fa-money-bill-wave fa-3x"></i>
+                <h2>Withdraw Funds</h2>
+                <p>Withdraw money from your account whenever you need it.</p>
+            </div>
+            <div class="service-card" onclick="showPopup('transfer')">
+                <i class="fas fa-exchange-alt fa-3x"></i>
+                <h2>Transfer Funds</h2>
+                <p>Transfer money between your accounts or to other banks easily and securely.</p>
+            </div>
+            <div class="service-card" onclick="window.location.href='dashboard.html'">
+                <i class="fas fa-file-alt fa-3x"></i>
+                <h2>View Statements</h2>
+                <p>Access your account statements and transaction history anytime.</p>
+            </div>
+            <div class="service-card" onclick="window.location.href='customersupport.html'">
+                <i class="fas fa-headset fa-3x"></i>
+                <h2>Contact Support</h2>
+                <p>Get in touch with our customer support for any assistance you need.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div id="popup-form"></div>
+        </div>
+    </div>
+</body>
+</html>
