@@ -5,64 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
-<header>
-    <a href="index.html">
-        <img src="Images/Logo.jpg" alt="Bank of Agile Logo" class="logo">
-    </a>
-    <a href="index.html" class="header-title-link">
-        <h1 class="header-title">BANK OF AGILE</h1>
-    </a>
-    <div class="menu-container">
-        <button class="menu-button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="dropdown-content">
-            <a href="index.html">Home</a>
-            <a href="registration.html">Registration</a>
-        </div>
-    </div>
-</header>
 <body>
+    <header>
+        <a href="index.html">
+            <img src="Images/Logo.jpg" alt="Bank of Agile Logo" class="logo">
+        </a>
+        <a href="index.html" class="header-title-link">
+            <h1 class="header-title">BANK OF AGILE</h1>
+        </a>
+        <nav class="menu-container">
+            <button class="menu-button" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="registration.html">Registration</a>
+                <a href="user.html">Banking Services</a>
+                <a href="ourstory.html">Our Story</a>
+                <a href="customersupport.html">Customer Support</a>
+            </div>
+        </nav>
+    </header>
     <div class="center-container">
-        <div class="registration-container">
+        <div class="content-container">
             <h1>Register</h1>
             <form action="/submit-registration" id="form" method="POST">
-                <input type="text" id="username" placeholder="username" /><br>
-                <input type="text" id="password" placeholder="password" /><br>
-                <input type="submit" value="Register" />
+                <div class="input-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="input-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Address" required>
+                </div>
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                </div>
+                <button type="submit">Register</button>
             </form>
         </div>
     </div>
     <script>
-        var form = document.getElementById('form')
+        var form = document.getElementById('form');
 
         form.addEventListener('submit', function (e) {
-            e.preventDefault()
+            e.preventDefault();
 
-            var usernameInput = document.getElementById('username').value
-            var passwordInput = document.getElementById('password').value
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var address = document.getElementById('address').value;
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
 
             fetch('http://localhost:8080/users', {
                 method: 'POST',
                 body: JSON.stringify({
-                    username: usernameInput,
-                    password: passwordInput,
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phone: phone,
+                    address: address,
+                    username: username,
+                    password: password,
                 }),
                 headers: {
                     'Content-type': 'application/json',
                 }
             })
                 .then(function (response) {
-                    return response.json()
+                    return response.json();
                 })
                 .then(function (data) {
-                    console.log(data)
-                    usernameInput = document.getElementById("username")
-                    passwordInput = document.getElementById("password")
-                }).catch(error => console.error('Error', error));
+                    console.log(data);
+                    document.getElementById('form').reset();
+                })
+                .catch(error => console.error('Error', error));
         });
     </script>
 </body>
